@@ -1,6 +1,8 @@
-import {combineReducer} from 'redux'
+import {combineReducers} from 'redux'
 import items from './item'
 
-const allreducer = combineReducer({
+const allreducer = combineReducers({
     items:items
 })
+
+export default allreducer;

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import GCS from "./components/GCS";
+//import GCS from "./components/GCS";
 
 
     class App extends Component {
@@ -8,7 +8,7 @@ import GCS from "./components/GCS";
                 
                 <div className="App">
                  
-                    <GCS/>
+                   
                    
                 </div>
             );
