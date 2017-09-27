@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 //import GCS from "./components/GCS";
+import Items from './containers/items';
 
 
     class App extends Component {
@@ -7,9 +8,9 @@ import React, {Component} from 'react';
             return (
                 
                 <div className="App">
+               
+                 <Items/>
                  
-                   
-                   
                 </div>
             );
         }

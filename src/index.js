@@ -9,7 +9,7 @@ import allreducer from './reducers'
 const store = createStore(allreducer)
 
 ReactDOM.render(
-    <Provider>
+    <Provider store={store}>
         <App/>
      </Provider>,
      document.getElementById('root'));
