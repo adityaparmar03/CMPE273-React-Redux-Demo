@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import {bindActionCreators} from 'redux';
+//import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {addqty} from '../actions/add.js';
+import {addItem} from '../actions/add.js';
+import {removeItem} from '../actions/add.js';
 
 
 class Items extends Component {
@@ -13,7 +14,7 @@ class Items extends Component {
              <div className="col-sm-4" >{list.name}</div>
              <div className="col-sm-4" >${list.price}</div>
              <div className="col-sm-4" >
-             <button type="button" onClick={()=>this.props.addqty(list)} className="btn btn-primary">Add</button>
+             <button type="button" onClick={()=>this.props.addToOrder(list)} className="btn btn-primary">Add</button>
              </div></div></div>
       )
     }   
@@ -57,7 +58,13 @@ function mapStateToProps(state){
         items : state.items
     }
 }
-function matchDispatchToProps(dispatch){
+/*function matchDispatchToProps(dispatch){
     return bindActionCreators({addqty : addqty},dispatch)
+}*/
+function mapDispatchToProps(dispatch) {
+    return {
+        addToOrder : (data) => dispatch(addItem(data)),
+        removeFromOrder : (data) => dispatch(removeItem(data))
+    };
 }
-export default connect(mapStateToProps,matchDispatchToProps)(Items);
+export default connect(mapStateToProps,mapDispatchToProps)(Items);
