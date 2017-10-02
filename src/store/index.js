@@ -2,16 +2,16 @@
 import {createStore} from 'redux';
 
 import reducers from '../reducers/actions'
-import intialstate from '../reducers/intialstate.json'
+import initialstate from '../reducers/initialstate.json'
 
 
-const store = createStore(reducers,intialstate);
-console.log('state=>'+(store.getState()));
+const store = createStore(reducers,initialstate);
+
 store.dispatch({
-    type:"ADD_ITEM",
-    payload:"I am calling ..."
+    type:"LOAD",
+    payload:""
 });
 
-console.log('newstate'+(store.getState()));
+
 
 export default store;

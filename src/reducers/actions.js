@@ -1,15 +1,31 @@
 import {combineReducers} from 'redux'
 
-export const add = (state=[],action)=>{
+export const food = (state=[],action)=>{
     
-    if(action.type === "ADD_ITEM"){
+    
+    if(action.type === "LOAD"){
         
-        console.log("act.js=>"+JSON.stringify(state)+"action"+action.payload);
+        
         return[
-            ...state,
-            {"id":4,"name":"rr","price":12,"qty":0}
+            ...state
+            
+            
         ]
     }
+    if(action.type === "OP"){
+        
+      
+            return(
+                 state.map(item => {
+                        return item.id === action.payload.id ? action.payload : item;
+                    }) 
+               
+            ) 
+               
+            
+        
+    }
+    
     return state;
 }
 
@@ -18,7 +34,7 @@ export const add = (state=[],action)=>{
 
 export default combineReducers({
     
-    //add:add
+    food:food
     
 
 });

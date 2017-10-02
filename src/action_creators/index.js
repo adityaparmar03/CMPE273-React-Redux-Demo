@@ -1,9 +1,14 @@
 
-export function addItem() {
+export function Operation(item,i) {
    
+    if(item.qty>0 || i===1)
+    item.qty = item.qty + i;
+
     return {
-        type : "ADD_ITEM",
-        payload : "3"                               // this is same as newItem : newItem in ES6
+        type : "OP",
+        payload : item                                // this is same as newItem : newItem in ES6
     }
 }
 
+
+ 
