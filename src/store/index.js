@@ -1,8 +1,13 @@
-import React, {Component} from 'react';
-import {createStore} from 'redux';
-import allreducer from './reducer/index'
 
-const store = createStore(allreducer)
-class store extends Component {
-}
+import {createStore} from 'redux';
+import reducers from '../reducers/actions'
+import intialstate from '../reducers/intialstate.json'
+
+
+const store = createStore(reducers,intialstate);
+
+
+
+
+
 export default store;

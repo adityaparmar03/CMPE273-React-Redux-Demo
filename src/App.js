@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 //import GCS from "./components/GCS";
-import Items from './containers/items';
+import Index from './containers/index';
 
 
     class App extends Component {
@@ -9,7 +9,7 @@ import Items from './containers/items';
                 
                 <div className="App">
                
-                 <Items/>
+                 <Index/>
                  
                 </div>
             );

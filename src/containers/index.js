@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-//import {bindActionCreators} from 'redux';
+import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {addItem} from '../actions/add.js';
-import {removeItem} from '../actions/add.js';
+import {addItem} from '../action_creators/index';
 
 
-class Items extends Component {
+
+class Index extends Component {
    
     menu(list,index){
         return ( 
@@ -54,17 +54,14 @@ class Items extends Component {
     }
 }
 function mapStateToProps(state){
+   
     return{
-        items : state.items
+       
+        items : state.initialstate
     }
 }
-/*function matchDispatchToProps(dispatch){
-    return bindActionCreators({addqty : addqty},dispatch)
-}*/
-function mapDispatchToProps(dispatch) {
-    return {
-        addToOrder : (data) => dispatch(addItem(data)),
-        removeFromOrder : (data) => dispatch(removeItem(data))
-    };
+function matchDispatchToProps(dispatch){
+    return bindActionCreators({addToOrder : addItem},dispatch)
 }
-export default connect(mapStateToProps,mapDispatchToProps)(Items);
+
+export default connect(mapStateToProps,matchDispatchToProps)(Index);
