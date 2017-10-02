@@ -9,7 +9,7 @@ import Index from './containers/index';
                 
                 <div className="App">
                
-                 <Index/>
+             
                  
                 </div>
             );

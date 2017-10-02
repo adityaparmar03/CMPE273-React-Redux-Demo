@@ -1,19 +1,24 @@
 import {combineReducers} from 'redux'
 
-const add = (state,action)=>{
+export const add = (state=[],action)=>{
     
     if(action.type === "ADD_ITEM"){
-        console.log("act.js=>");
+        
+        console.log("act.js=>"+JSON.stringify(state)+"action"+action.payload);
+        return[
+            ...state,
+            {"id":4,"name":"rr","price":12,"qty":0}
+        ]
     }
     return state;
 }
 
 
-const reducers = combineReducers({
+
+
+export default combineReducers({
     
-    //add : add
+    //add:add
     
 
-})
-
-export default reducers;
+});
