@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {Operation} from '../action_creators/index';
+import * as myactions from '../action_creators/index';
 
 
 
@@ -15,7 +15,7 @@ class Index extends Component {
              <div className="col-sm-4" >{list.name}</div>
              <div className="col-sm-4" >${list.price}</div>
              <div className="col-sm-4" >
-             <button type="button" onClick={()=>this.props.Operation(list,1)} className="btn btn-primary">Add</button>
+             <button type="button" onClick={()=>this.props.Add(list)} className="btn btn-primary">Add</button>
              </div></div></div>
       )
     }   
@@ -35,7 +35,7 @@ class Index extends Component {
                  <div className="col-sm-4" >${list.price}
                  <br/>Qty:{list.qty} </div>
                  <div className="col-sm-4" >
-                 <button type="button" className="btn btn-success" onClick={()=>this.props.Operation(list,-1)} key={ list.id }>Remove</button>
+                 <button type="button" className="btn btn-success" onClick={()=>this.props.Remove(list)} key={ list.id }>Remove</button>
                  </div></div>
           )
           }
@@ -94,7 +94,9 @@ function mapStateToProps(state){
     }
 }
 function matchDispatchToProps(dispatch){
-    return bindActionCreators({Operation : Operation},dispatch)
+    return bindActionCreators(myactions,dispatch)
+  
+    
 }
 
 

@@ -1,29 +1,14 @@
 import {combineReducers} from 'redux'
 
 export const food = (state=[],action)=>{
-    
-    
-    if(action.type === "LOAD"){
-        
-        
-        return[
-            ...state
-            
-            
-        ]
-    }
-    if(action.type === "OP"){
-        
-      
-            return(
+      if(action.type === "OP"){
+        return(
                  state.map(item => {
                         return item.id === action.payload.id ? action.payload : item;
                     }) 
                
-            ) 
-               
+            )
             
-        
     }
     
     return state;

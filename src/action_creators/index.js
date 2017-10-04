@@ -1,8 +1,8 @@
 
-export function Operation(item,i) {
+export function Add(item) {
    
-    if(item.qty>0 || i===1)
-    item.qty = item.qty + i;
+    
+    item.qty = item.qty+1;
 
     return {
         type : "OP",
@@ -11,4 +11,13 @@ export function Operation(item,i) {
 }
 
 
+export function Remove(item) {
+    
+  
+     item.qty = item.qty - 1;
  
+     return {
+         type : "OP",
+         payload : item                                // this is same as newItem : newItem in ES6
+     }
+ }
