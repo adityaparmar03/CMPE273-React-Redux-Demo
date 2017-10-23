@@ -1,9 +1,9 @@
 # CMPE273-React-Redux-Dem
 
 Run the application:
-Client 
+Client:
   cd client
   npm start
-Server
-  cd sercer
+Server:
+  cd server
   nodemon
