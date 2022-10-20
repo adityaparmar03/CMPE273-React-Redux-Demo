@@ -11,7 +11,7 @@
     "body-parser": "*",
     "cors": "^2.8.4",
     "express": "*",
-    "mongoose": "4.10.8"
+    "mongoose": "4.13.21"
   },
   "author": "",
   "license": "ISC"
